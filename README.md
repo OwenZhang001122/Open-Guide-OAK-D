@@ -1,7 +1,7 @@
 # OpenGuide-Assist: Guided Vision for the Visually Impaired
 A wearable solution for visually impaired individuals to feel more confident navigating their environment. 
 
-special thanks to BU Senior Design Team 2021-2022 (https://github.com/amg1998/BUSeniorDesign-Opticle-21-22)
+special thanks to [BU Senior Design Team 2021-2022](https://github.com/amg1998/BUSeniorDesign-Opticle-21-22)
 
 ### Table of Contents:
 * [Project Overview](#projectoverview)
@@ -47,9 +47,6 @@ In order to identify particular objects and their positioning, a neural network 
 * Product Design
     * Our product is still in a prototype form and we would like to make the design more durable and better looking. We would hope to reduce the size of the wrist mount so it is not as bulky and looks closer to the size of a smart watch or fitness band. We also would want a more secure casing for our electrical components on the chest mount so everything is covered and looks more like one cohesive device instead of an assembly of different components attached to the chest mount.
 
-<a name="Extra READMEs"></a> 
-* [Hardware Documentations](https://github.com/OwenZhang001122/Open-Guide-OAK-D/blob/main/README_Hardware.md)
-* [Software Documentations](https://github.com/OwenZhang001122/Open-Guide-OAK-D/blob/main/README_Software.md)
 
 ### Extra Development Notes from Team Members
 ##### Blockers that were Resolved
@@ -64,6 +61,8 @@ In order to identify particular objects and their positioning, a neural network 
 <a name="documentation"></a> 
 ## Documentation
 Documentation for setup and installation is available at [DepthAI API Docs](https://docs.luxonis.com/projects/api/en/latest/install/).
+* [Hardware Documentations](https://github.com/OwenZhang001122/Open-Guide-OAK-D/blob/main/README_Hardware.md)
+* [Software Documentations](https://github.com/OwenZhang001122/Open-Guide-OAK-D/blob/main/README_Software.md)
 
 <a name="sources"></a> 
 ## Sources
