@@ -1,7 +1,7 @@
 # OpenGuide-Assist: Guided Vision for the Visually Impaired
 A wearable solution for visually impaired individuals to feel more confident navigating their environment. 
 
-special thanks to [BU Senior Design Team 2021-2022](https://github.com/amg1998/BUSeniorDesign-Opticle-21-22)
+Special thanks to [BU Senior Design Team 2021-2022](https://github.com/amg1998/BUSeniorDesign-Opticle-21-22).
 
 ### Table of Contents:
 * [Project Overview](#projectoverview)
