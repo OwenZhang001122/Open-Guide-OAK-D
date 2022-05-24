@@ -61,13 +61,13 @@ Many of the components were purchased from vendors as the software was the prima
 | ------ | ------ | ------ | ------ | ------ |
 | OAK-D Camera| [OpenCV](https://store.opencv.ai/products/oak-d) | For  visual and depth perception | 1 | $199.00|
 | Go Pro Chest Mount | [Amazon](https://www.amazon.com/Chest-Belt-Strap-Harness-Mount/dp/B089LJC6LW/)|To secure components onto the user | 1 | $33.70|
-| LRA Motors | [Amazon](https://www.digikey.com/en/products/detail/vybronics-inc/VG0840001D/15220809?s) | To produce haptic  feedback based on video output| 2 | $5.99|
+| LRA Motors | [Amazon](https://www.digikey.com/en/products/detail/vybronics-inc/VG0840001D/15220809?s) | To produce haptic  feedback based on video output| 1 | $3.71|
 | Raspberry Pi Sugar| [Amazon](https://www.amazon.com/Portable-Pwnagotchi-Raspberry-Accessories-handhold/dp/B09MJ8SCGD/)| Power source for the Raspberry Pi Zero | 1 | $33.99|
 | Portable Charger| [Amazon](https://www.amazon.com/10400mAh-Portable-Charger-External-Compatible/dp/B07JYYRT7T/) | To power Raspberry Pi and OAK-D | 1 | $15.99|
 | Raspberry Pi Zero| [Amazon](https://www.amazon.com/Raspberry-Pi-Zero-Wireless-model/dp/B06XFZC3BX/)|Placed on the wrist mount and interfaces with primary Pi 4| 1 | $10.00|
-| Raspberry Pi 4B | [Amazon](https://www.amazon.com/Raspberry-Pi-Computer-Suitable-Workstation/dp/B0899VXM8F/)|Primary processing unit of the system | 1 | $195.00|
+| Raspberry Pi 4B | [Amazon](https://www.amazon.com/Raspberry-Pi-Computer-Suitable-Workstation/dp/B0899VXM8F/)|Primary processing unit of the system | 1 | $75.00|
 | Barell USB Connector| [Amazon](https://www.amazon.com/2-5mm-Barrel-Connector-Charge-CableCC/dp/B00ZUDXMK2/)|Connect the OAK-D to powersource| 1 | $6.00|
-|Total||||$499.67|
+|Total||||$377.39|
 
 
 __Power Consumption__
