@@ -2,7 +2,9 @@
 
 In this directory there are usage examples of DepthAI Python library.
 
-In the [test folder](https://github.com/amg1998/BUSeniorDesign-ViSiO-21-22/tree/main/examples/test) is a file that can be used to test the OAK-D camera.
+In the [Raspberrypi_driven] are python files that run on the raspberrypi as processor
+In the [Laptop_driven] are python files that run on the laptop as processor
+In the [models] are .blob models that can be used on the OAK-D camera
 
 ## Description
 
