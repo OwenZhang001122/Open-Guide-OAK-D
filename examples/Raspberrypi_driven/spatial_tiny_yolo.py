@@ -13,9 +13,12 @@ from projector_3d import PointCloudVisualizer
 from collections import deque
 import speech_recognition as sr
 
-from gtts import *
+#from gtts import *
+import gtts 
 from playsound import playsound
 import os
+from google.cloud import texttospeech
+
 
 
 rpi = 0
@@ -36,8 +39,8 @@ if (rpi==1):
 
     HOST = '155.41.122.253'
     PORT = 2000
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((HOST,PORT))
+    #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    #s.connect((HOST,PORT))
 
     #setup PI
     GPIO.setmode(GPIO.BOARD)
@@ -72,15 +75,15 @@ class Main:
         self.target = "handle"
         self.confq = deque(maxlen=30)
         self.lastsaid = [0,0,0]
-        self.epsDist = 1
+        self.epsDist = 3
 
 
     def run_yolo_pc(self):
         color = (255, 255, 255)
         speed=' -s' + '160'
         pcl_converter = None
-        vis = o3d.visualization.Visualizer()
-        vis.create_window()
+        #vis = o3d.visualization.Visualizer()
+        #vis.create_window()
         for frame, depthFrameColor, fps, depthFrame, pcFrame in self.depthai.yolo_det():
             for roiData in self.depthai.roiDatas:
                 roi = roiData.roi
@@ -146,15 +149,51 @@ class Main:
                 print("Notified User")
                 vdistance = str(round(self.lastsaid[1]/1000*3.28,1))
                 message=self.target+vdistance+"feetat"+heading+"o'clock"
-                Popen(cmd_start+'"'+message+'"'+cmd_mid+cmd_end, shell=True)
+                #Popen(cmd_start+'"'+message+'"'+cmd_mid+cmd_end, shell=True)
+                
                 #Popen('message.mp3', shell=True)
-                os.system('mpg123 message.mp3')
+                #gtts.setPitch(1)
+                                
+                # Instantiates a client
+                client = texttospeech.TextToSpeechClient()
+
+                # Set the text input to be synthesized
+                synthesis_input = texttospeech.SynthesisInput(text=message)
+
+                # Build the voice request, select the language code ("en-US") and the ssml
+                # voice gender ("neutral")
+                voice = texttospeech.VoiceSelectionParams(
+                    language_code="en-GB", ssml_gender=texttospeech.SsmlVoiceGender.NEUTRAL, name="en-GB-Wavenet-B"
+                )
+
+                # Select the type of audio file you want returned
+                audio_config = texttospeech.AudioConfig(
+                    audio_encoding=texttospeech.AudioEncoding.MP3
+                )
+
+                # Perform the text-to-speech request on the text input with the selected
+                # voice parameters and audio file type
+                response = client.synthesize_speech(
+                    input=synthesis_input, voice=voice, audio_config=audio_config
+                )
+                try:
+                    #t1 = gtts.gTTS(message,tld='co.uk')
+                    #t1.save("message.mp3")
+                    #os.system('mpg123 -f -22768 message.mp3')
+                    with open("output.mp3", "wb") as out:
+                        # Write the response to the output file.
+                        out.write(response.audio_content)
+                        print('Audio content written to file "output.mp3"')
+                        os.system('mpg123 -f -22768 output.mp3')
+
+                except:
+                    continue
               
           
             #cmd_start+self.target+vdistance+"feetat"+heading+"o'clock"+speed,shell=True
             cv2.putText(frame, "NN fps: {:.2f}".format(fps), (2, frame.shape[0] - 4), cv2.FONT_HERSHEY_TRIPLEX, 0.4, color)
-            cv2.imshow("depth", depthFrameColor)
-            cv2.imshow("rgb", frame)
+            #cv2.imshow("depth", depthFrameColor)
+            #cv2.imshow("rgb", frame)
             if cv2.waitKey(1) == ord('q'):
                 break
 
@@ -196,12 +235,12 @@ class Main:
 
             if len(num_pts)>5000:
                 print("Obstacle")
-                if (rpi==1):
-                    s.send(bytes('1','utf-8'))
+                #if (rpi==1):
+                    #s.send(bytes('1','utf-8'))
             else:
                 print("Nothing")
-                if (rpi==1):
-                    s.send(bytes('0','utf-8'))
+                #if (rpi==1):
+                    #s.send(bytes('0','utf-8'))
 
 
         if self.pcl_converter is not None:
@@ -314,4 +353,4 @@ class Main:
 
 if __name__ == '__main__':
 
-    Main().get_target()
+    Main().run_yolo_pc()
