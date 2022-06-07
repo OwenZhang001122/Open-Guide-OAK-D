@@ -9,5 +9,5 @@ Documentation for setup and installation is available at [DepthAI API Docs](http
 * [Hardware Documentations](https://github.com/OwenZhang001122/Open-Guide-OAK-D/blob/main/README_Hardware.md)
 * [Software Documentations](https://github.com/OwenZhang001122/Open-Guide-OAK-D/blob/main/README_Software.md)
 
-This project was part of a [BU Senior Design Project 2021-2022](https://github.com/amg1998/BUSeniorDesign-Opticle-21-22).
+This project was part of a [Boston University Senior Design Project](https://www.bu.edu/eng/files/2022/05/ECEDay22_team3Opticle.pdf).
 
